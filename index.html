@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="node_modules/confetti-js/dist/index.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <title>Document</title>
+    <style>
+        section {
+            height: 100vh;
+            weight: 100vw;
+            text-align: center;
+            position: relative;
+            /* padding-top: 300px; */
+        }
+        h3 {
+            position: absolute;
+            top: 200px;
+            left: 30vw;
+            background-color: #8bb38bab;
+            padding: 200px;
+            border-radius: 10px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <section>
+        <canvas id="my-canvas"></canvas>
+        <h3>這是背景有可愛的水果在掉的效果</h3>
+    </section>
+
+    <script>
+        var confettiElement = document.getElementById('my-canvas');
+        var confettiSettings = { 
+            target: confettiElement,
+            "max":"50",
+            "size":"1",
+            "animate":true,
+            "props":["circle","square","triangle","line",
+                    {"type":"svg","src":"./confetti/apple 1.svg","size":24,"weight":0.2},
+                    {"type":"svg","src":"./confetti/lemon 1.svg","size":24,"weight":0.3},
+                    {"type":"svg","src":"./confetti/Vector.svg","size":24,"weight":0.2},
+                    {"type":"svg","src":"./confetti/box.svg","size":24,"weight":0.2},
+                    {"type":"svg","src":"./confetti/people-carry-box.svg","size":26,"weight":0.3},
+                    {"type":"svg","src":"./confetti/seedling 1.svg","size":24,"weight":0.3},
+                    {"type":"svg","src":"./confetti/carrot 1.svg","size":25,"weight":0.5}],
+            "colors":[[165,104,246],[230,61,135],[0,199,228],[253,214,126]],
+            "clock":"10",
+            "rotate": true,
+            "width":"1800",
+            "height":"1000",
+            "start_from_edge":false,
+            "respawn":true
+        };
+        var confetti = new ConfettiGenerator(confettiSettings);
+        confetti.render();
+    </script>
+</body>
+
+</html>
