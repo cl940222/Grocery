@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/css/bootstrap.css">
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.js"></script>
+    <script src="/js/bootstrap.bundle.js"></script>
     <style>
         * {
             /* outline: 2px solid #ccdcac; */
@@ -46,6 +45,14 @@
         #farmer img:hover {
             opacity: 100%;
         }
+
+        .bs-popover-auto {
+            /* outline: 1px solid black; */
+        }
+        .popover-header, .popover {
+            /* outline: 1px solid black; */
+            background-color: #ccdcac;
+        }
     </style>
 </head>
 
@@ -75,41 +82,68 @@
         <h3>與我們合作的小農</h3>
         <div class="row row-cols-4">
             <div class="col">
-                <img src="/lib/img/farmer_000.jpg" alt="" class="img-fluid">
+                <img src="/lib/img/farmer_000.jpg" alt="" class="img-fluid"
+                title="小農1號"
+                data-bs-toggle="popover"
+                data-bs-content="芒果"
+                data-bs-placement= "right"
+                data-bs-trigger="hover">
             </div>
             <div class="col">
-                <img src="/lib/img/farmer_001.jpg" alt="" class="img-fluid">
+                <img src="/lib/img/farmer_001.jpg" alt="" class="img-fluid"
+                title="小農2號"
+                data-bs-toggle="popover"
+                data-bs-content="柿子 檸檬 蘋果"
+                data-bs-placement= "right"
+                data-bs-trigger="hover">
             </div>
             <div class="col">
-                <img src="/lib/img/farmer_002.jpg" alt="" class="img-fluid">
+                <img src="/lib/img/farmer_002.jpg" alt="" class="img-fluid"
+                title="小農3號"
+                data-bs-toggle="popover"
+                data-bs-content="蘆筍 水蓮"
+                data-bs-placement= "right"
+                data-bs-trigger="hover">
             </div>
             <div class="col">
-                <img src="/lib/img/farmer_003.jpg" alt="" class="img-fluid">
+                <img src="/lib/img/farmer_003.jpg" alt="" class="img-fluid"
+                title="小農4號"
+                data-bs-toggle="popover"
+                data-bs-content="彩椒 紅蘿蔔"
+                data-bs-placement= "right"
+                data-bs-trigger="hover">
             </div>
             <div class="col">
-                <img src="/lib/img/farmer_004.jpg" alt="" class="img-fluid">
+                <img src="/lib/img/farmer_004.jpg" alt="" class="img-fluid"
+                title="小農5號"
+                data-bs-toggle="popover"
+                data-bs-content="蘋果 芭樂"
+                data-bs-placement= "right"
+                data-bs-trigger="hover">
             </div>
             <div class="col">
-                <img src="/lib/img/farmer_005.jpg" alt="" class="img-fluid">
+                <img src="/lib/img/farmer_005.jpg" alt="" class="img-fluid"
+                title="小農6號"
+                data-bs-toggle="popover"
+                data-bs-content="空心菜 地瓜葉"
+                data-bs-placement= "right"
+                data-bs-trigger="hover">
             </div>
             <div class="col">
-                <img src="/lib/img/farmer_006.jpg" alt="" class="img-fluid">
+                <img src="/lib/img/farmer_006.jpg" alt="" class="img-fluid"
+                title="小農7號"
+                data-bs-toggle="popover"
+                data-bs-content="高麗菜好吃喔"
+                data-bs-placement= "right"
+                data-bs-trigger="hover">
             </div>
 
         </div>
     </section>
 
     <script>
-
-        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl)
-        })
-
-        var popover = new bootstrap.Popover(document.querySelector('.example-popover'), {
-            container: 'body'
-        })
-
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
     </script>
 
 </body>
