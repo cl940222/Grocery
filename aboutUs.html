@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <style>
+        * {
+            /* outline: 2px solid #ccdcac; */
+        }
+
+        #slogan {
+            width: 90%;
+            padding: 10px;
+            font-size: 16px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        #idea {
+            padding: 40px;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        #promise {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        #farmer {
+            width: 80%;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        #farmer img {
+            opacity: 50%;
+            border-radius: 50%;
+        }
+
+        #farmer img:hover {
+            opacity: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="slogan" class="container-fluid bg-white">
+        <div>
+            <i>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </i>
+        </div>
+    </section>
+    <section id="concept" class="container-fluid">
+        <div class="row shadow">
+            <div class="col-6">
+                <img src="./lib/img/about_001.jpg" alt="" class="img-fluid">
+            </div>
+            <div id="idea" class="col-6">
+                <h3>我們的理念</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos iure nihil similique id magnam
+                    mollitia culpa et dolore? Non, enim?</p>
+            </div>
+        </div>
+    </section>
+    <section id="promise" class="container-fluid">
+        <h3>我們的承諾</h3>
+
+    </section>
+    <section id="farmer" class="container-fluid">
+        <h3>與我們合作的小農</h3>
+        <div class="row row-cols-4">
+            <div class="col">
+                <img src="/lib/img/farmer_000.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="col">
+                <img src="/lib/img/farmer_001.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="col">
+                <img src="/lib/img/farmer_002.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="col">
+                <img src="/lib/img/farmer_003.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="col">
+                <img src="/lib/img/farmer_004.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="col">
+                <img src="/lib/img/farmer_005.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="col">
+                <img src="/lib/img/farmer_006.jpg" alt="" class="img-fluid">
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+
+        var popover = new bootstrap.Popover(document.querySelector('.example-popover'), {
+            container: 'body'
+        })
+
+    </script>
+
+</body>
+
+</html>
