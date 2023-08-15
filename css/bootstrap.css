@@ -5657,6 +5657,7 @@ textarea.form-control-lg {
   color: var(--bs-tooltip-color);
   text-align: center;
   background-color: var(--bs-tooltip-bg);
+  /* background-color: #362706; */
   border-radius: var(--bs-tooltip-border-radius);
 }
 
