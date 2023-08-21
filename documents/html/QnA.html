@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://kit.fontawesome.com/afffc5a1db.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../vg.css">
+    <link rel="stylesheet" href="../css/QnA.css">
+    <style>
+        .content {
+            padding: 16px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 主navbar這裡開始 -->
+    <a href="#user" class="icon" id="navUser">
+        <i class="fa-solid fa-user"></i>
+    </a>
+    <nav id="main-nav">
+        <a class="icon cart-button" id="navCart">
+            <span class="bag-count">3</span>
+            <span class="bag-icon"><i class="fa-solid fa-cart-shopping img-fluid"></i></span>
+            <!-- <span class="bag-label">View Bag</span> -->
+        </a>
+    </nav>
+    <aside id="sidebar-cart">
+        <main>
+            <a href="#" class="close-button"><i class="fa-solid fa-xmark"></i></a>
+            <h2>購物車<span class="count">3</span></h2>
+            <ul class="products">
+                <li class="product">
+                    <a href="#" class="product-link">
+                        <span class="product-image">
+                            <img src="https://via.placeholder.com/75x50/ffffff/cccccc?text=PHOTO" alt="Product Photo">
+                        </span>
+                        <span class="product-details">
+                            <h3>蔬菜箱</h3>
+                            <span class="qty-price">
+                                <span class="qty">
+                                    <button class="minus-button" id="minus-button-1">-</button>
+                                    <input type="number" id="qty-input-1" class="qty-input" step="1" min="1" max="1000"
+                                        name="qty-input" value="1" pattern="[0-9]*" title="Quantity"
+                                        inputmode="numeric">
+                                    <button class="plus-button" id="plus-button-1">+</button>
+                                    <input type="hidden" name="item-price" id="item-price-1" value="12.00">
+                                </span>
+                                <span class="price">200</span>
+                            </span>
+                        </span>
+                    </a>
+                    <a href="#remove" class="remove-button"><i class="fa-solid fa-trash"></i></a>
+                </li>
+                <li class="product">
+                    <a href="#" class="product-link">
+                        <span class="product-image">
+                            <img src="https://via.placeholder.com/75x50/ffffff/cccccc?text=PHOTO" alt="Product Photo">
+                        </span>
+                        <span class="product-details">
+                            <h3>萬聖箱</h3>
+                            <span class="qty-price">
+                                <span class="qty">
+                                    <button class="minus-button" id="minus-button-1">-</button>
+                                    <input type="number" id="qty-input-2" class="qty-input" step="1" min="1" max="1000"
+                                        name="qty-input" value="1" pattern="[0-9]*" title="Quantity"
+                                        inputmode="numeric">
+                                    <button class="plus-button" id="plus-button-1">+</button>
+                                    <input type="hidden" name="item-price" id="item-price-2" value="12.00">
+                                </span>
+                                <span class="price">300</span>
+                            </span>
+                        </span>
+                    </a>
+                    <a href="#remove" class="remove-button"><i class="fa-solid fa-trash"></i></a>
+                </li>
+                <li class="product">
+                    <a href="#" class="product-link">
+                        <span class="product-image">
+                            <img src="https://via.placeholder.com/75x50/ffffff/cccccc?text=PHOTO" alt="Product Photo">
+                        </span>
+                        <span class="product-details">
+                            <h3>水果箱</h3>
+                            <span class="qty-price">
+                                <span class="qty">
+                                    <button class="minus-button" id="minus-button-1">-</button>
+                                    <input type="number" id="qty-input-2" class="qty-input" step="1" min="1" max="1000"
+                                        name="qty-input" value="1" pattern="[0-9]*" title="Quantity"
+                                        inputmode="numeric">
+                                    <button class="plus-button" id="plus-button-1">+</button>
+                                    <input type="hidden" name="item-price" id="item-price-2" value="12.00">
+                                </span>
+                                <span class="price">300</span>
+                            </span>
+                        </span>
+                    </a>
+                    <a href="#remove" class="remove-button"><i class="fa-solid fa-trash"></i></a>
+                </li>
+            </ul>
+            <div class="totals">
+                <div class="subtotal">
+                    <span class="label">Total:</span> <span class="amount">800</span>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <a class="checkout-button" href="#">結帳去<i class="fa-solid fa-angles-right"></i></a>
+            </div>
+        </main>
+    </aside>
+    <div id="sidebar-cart-curtain"></div>
+    </div>
+    <div class="vg-nav" id="vg-navbar">
+        <a href="#home" class="p-3 btn-vg-2 btn-vg-2-active">LOGO</a>
+        <a href="#about" class="p-3 btn-vg-2">關於我們</a>
+        <a href="#news" class="p-3 btn-vg-2">最新消息</a>
+        <a href="#contact" class="p-3 btn-vg-2">訂閱蔬果箱</a>
+        <a href="#about" class="p-3 btn-vg-2">蔬果專欄</a>
+        <a href="#about" class="p-3 btn-vg-2 ms-auto">常見QA</a>
+
+        <a href="javascript:void(0);" class="icon" onclick="myDropNav1()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <!-- 主navbar這裡結束 -->
+
+
+    <div class="vg-banner shadow d-flex justify-content-center pt-5">
+        <h2 class="vg-h2">常見問題</h2>
+    </div>
+
+
+    <!-- 文章Navbar這裡開始 -->
+
+
+    <div id="vg-navbar-2" class="vg-navbar-2">
+        <a id="titleAll" class="btn-vg-3">全部分類</a>
+        <a id="title1" class="btn-vg-3" href="#qa1">會員常見問題</a>
+        <a id="title2" class=" btn-vg-3" href="#qa2">購物金常見問題</a>
+        <a id="title3" class=" btn-vg-3" href="#qa3">購物常見問題</a>
+        <a id="title4" class=" btn-vg-3" href="#qa4">宅配常見問題</a>
+        <a id="title5" class=" btn-vg-3" href="#qa5">超商取貨常見問題</a>
+        <a href="javascript:void(0);" class="icon" onclick="myDropNav2()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <!-- 文章Navbar這裡結束 -->
+
+    <section id="qa1" class="container-sm p-5 mt-5 mb-5 shadow">
+        <h3 class="vg-h3 mb-4">會員常見問題</h3>
+        <div class="accordion" id="accordion1">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        忘記密碼
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordion1">
+                    <div class="accordion-body">
+                        <strong>請使用以下步驟：</strong><br>
+                        1. 前往「會員登入」<br>
+                        2. 點一下「忘記密碼」，依指示進行操作修改密碼，更改完畢後再重新登入 若經過一段時間，您仍然沒有收到 GREEN&SAFE
+                        密碼提醒郵件，請查看您的垃圾郵件信件箱。仍無法解決您的問題請洽官方客服<code>【新增超連結】</code>詢問。
+                        does limit overflow.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        會員註冊問題
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordion1">
+                    <div class="accordion-body">
+                        每位消費者可註冊成為永豐餘生技【有機生活食尚】會員，但一組手機號碼僅能註冊一次會員，且不同帳號間不得主張合併或移轉相關權利。如無手機號碼註冊請在指定通路門市以紙本方式註冊會員。<br>
+                        2021/3/4 系統更新後，新舊會員首次登入皆須以新會員方式註冊，系統將比對在 SAP 內的 [行動電話] 與 [姓名]
+                        比對，只要完全符合會員系統內資料，將自動整合購物金的餘額及等級原有權益不受影響。舊會員登入後會馬上出現所屬會員等級及點數。消費後亦同。唯新會員資料會待隔天後顯示。
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        如何成為會員
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordion1">
+                    <div class="accordion-body">
+                        凡在 Vege 消費滿新台幣 1,000 元，並配合填妥申請書之必填欄位，即可成為「有機生活食尚」購物金會員，如有未完全填寫資料之情事，恕無法成為購物金會員。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="qa2" class="container-sm p-5 mt-5 mb-5 shadow">
+        <h3 class="vg-h3 mb-4">購物金常見問題</h3>
+        <div class="accordion" id="accordion2">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne2" aria-expanded="true" aria-controls="collapseOne2">
+                        忘記密碼
+                    </button>
+                </h2>
+                <div id="collapseOne2" class="accordion-collapse collapse" data-bs-parent="#accordion2">
+                    <div class="accordion-body">
+                        <strong>請使用以下步驟：</strong><br>
+                        1. 前往「會員登入」<br>
+                        2. 點一下「忘記密碼」，依指示進行操作修改密碼，更改完畢後再重新登入 若經過一段時間，您仍然沒有收到 GREEN&SAFE
+                        密碼提醒郵件，請查看您的垃圾郵件信件箱。仍無法解決您的問題請洽官方客服<code>【新增超連結】</code>詢問。
+                        does limit overflow.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
+                        會員註冊問題
+                    </button>
+                </h2>
+                <div id="collapseTwo2" class="accordion-collapse collapse" data-bs-parent="#accordion2">
+                    <div class="accordion-body">
+                        每位消費者可註冊成為永豐餘生技【有機生活食尚】會員，但一組手機號碼僅能註冊一次會員，且不同帳號間不得主張合併或移轉相關權利。如無手機號碼註冊請在指定通路門市以紙本方式註冊會員。<br>
+                        2021/3/4 系統更新後，新舊會員首次登入皆須以新會員方式註冊，系統將比對在 SAP 內的 [行動電話] 與 [姓名]
+                        比對，只要完全符合會員系統內資料，將自動整合購物金的餘額及等級原有權益不受影響。舊會員登入後會馬上出現所屬會員等級及點數。消費後亦同。唯新會員資料會待隔天後顯示。
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree2" aria-expanded="false" aria-controls="collapseThree2">
+                        如何成為會員
+                    </button>
+                </h2>
+                <div id="collapseThree2" class="accordion-collapse collapse" data-bs-parent="#accordion2">
+                    <div class="accordion-body">
+                        凡在 Vege 消費滿新台幣 1,000 元，並配合填妥申請書之必填欄位，即可成為「有機生活食尚」購物金會員，如有未完全填寫資料之情事，恕無法成為購物金會員。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="qa3" class="container-sm p-5 mt-5 mb-5 shadow">
+        <h3 class="vg-h3 mb-4">購物常見問題</h3>
+        <div class="accordion" id="accordion3">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne3" aria-expanded="true" aria-controls="collapseOne3">
+                        忘記密碼
+                    </button>
+                </h2>
+                <div id="collapseOne3" class="accordion-collapse collapse" data-bs-parent="#accordion3">
+                    <div class="accordion-body">
+                        <strong>請使用以下步驟：</strong><br>
+                        1. 前往「會員登入」<br>
+                        2. 點一下「忘記密碼」，依指示進行操作修改密碼，更改完畢後再重新登入 若經過一段時間，您仍然沒有收到 GREEN&SAFE
+                        密碼提醒郵件，請查看您的垃圾郵件信件箱。仍無法解決您的問題請洽官方客服<code>【新增超連結】</code>詢問。
+                        does limit overflow.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo3" aria-expanded="false" aria-controls="collapseTwo3">
+                        會員註冊問題
+                    </button>
+                </h2>
+                <div id="collapseTwo3" class="accordion-collapse collapse" data-bs-parent="#accordion3">
+                    <div class="accordion-body">
+                        每位消費者可註冊成為永豐餘生技【有機生活食尚】會員，但一組手機號碼僅能註冊一次會員，且不同帳號間不得主張合併或移轉相關權利。如無手機號碼註冊請在指定通路門市以紙本方式註冊會員。<br>
+                        2021/3/4 系統更新後，新舊會員首次登入皆須以新會員方式註冊，系統將比對在 SAP 內的 [行動電話] 與 [姓名]
+                        比對，只要完全符合會員系統內資料，將自動整合購物金的餘額及等級原有權益不受影響。舊會員登入後會馬上出現所屬會員等級及點數。消費後亦同。唯新會員資料會待隔天後顯示。
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree3" aria-expanded="false" aria-controls="collapseThree3">
+                        如何成為會員
+                    </button>
+                </h2>
+                <div id="collapseThree3" class="accordion-collapse collapse" data-bs-parent="#accordion3">
+                    <div class="accordion-body">
+                        凡在 Vege 消費滿新台幣 1,000 元，並配合填妥申請書之必填欄位，即可成為「有機生活食尚」購物金會員，如有未完全填寫資料之情事，恕無法成為購物金會員。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="qa4" class="container-sm p-5 mt-5 mb-5 shadow">
+        <h3 class="vg-h3 mb-4">宅配常見問題</h3>
+        <div class="accordion" id="accordion4">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne4" aria-expanded="true" aria-controls="collapseOne4">
+                        忘記密碼
+                    </button>
+                </h2>
+                <div id="collapseOne4" class="accordion-collapse collapse" data-bs-parent="#accordion4">
+                    <div class="accordion-body">
+                        <strong>請使用以下步驟：</strong><br>
+                        1. 前往「會員登入」<br>
+                        2. 點一下「忘記密碼」，依指示進行操作修改密碼，更改完畢後再重新登入 若經過一段時間，您仍然沒有收到 GREEN&SAFE
+                        密碼提醒郵件，請查看您的垃圾郵件信件箱。仍無法解決您的問題請洽官方客服<code>【新增超連結】</code>詢問。
+                        does limit overflow.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo4" aria-expanded="false" aria-controls="collapseTwo4">
+                        會員註冊問題
+                    </button>
+                </h2>
+                <div id="collapseTwo4" class="accordion-collapse collapse" data-bs-parent="#accordion4">
+                    <div class="accordion-body">
+                        每位消費者可註冊成為永豐餘生技【有機生活食尚】會員，但一組手機號碼僅能註冊一次會員，且不同帳號間不得主張合併或移轉相關權利。如無手機號碼註冊請在指定通路門市以紙本方式註冊會員。<br>
+                        2021/3/4 系統更新後，新舊會員首次登入皆須以新會員方式註冊，系統將比對在 SAP 內的 [行動電話] 與 [姓名]
+                        比對，只要完全符合會員系統內資料，將自動整合購物金的餘額及等級原有權益不受影響。舊會員登入後會馬上出現所屬會員等級及點數。消費後亦同。唯新會員資料會待隔天後顯示。
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree4" aria-expanded="false" aria-controls="collapseThree4">
+                        如何成為會員
+                    </button>
+                </h2>
+                <div id="collapseThree4" class="accordion-collapse collapse" data-bs-parent="#accordion4">
+                    <div class="accordion-body">
+                        凡在 Vege 消費滿新台幣 1,000 元，並配合填妥申請書之必填欄位，即可成為「有機生活食尚」購物金會員，如有未完全填寫資料之情事，恕無法成為購物金會員。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="qa5" class="container-sm p-5 mt-5 mb-5 shadow">
+        <h3 class="vg-h3 mb-4">超商取貨常見問題</h3>
+        <div class="accordion" id="accordion5">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne5" aria-expanded="true" aria-controls="collapseOne5">
+                        忘記密碼
+                    </button>
+                </h2>
+                <div id="collapseOne5" class="accordion-collapse collapse" data-bs-parent="#accordion5">
+                    <div class="accordion-body">
+                        <strong>請使用以下步驟：</strong><br>
+                        1. 前往「會員登入」<br>
+                        2. 點一下「忘記密碼」，依指示進行操作修改密碼，更改完畢後再重新登入 若經過一段時間，您仍然沒有收到 GREEN&SAFE
+                        密碼提醒郵件，請查看您的垃圾郵件信件箱。仍無法解決您的問題請洽官方客服<code>【新增超連結】</code>詢問。
+                        does limit overflow.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo5" aria-expanded="false" aria-controls="collapseTwo5">
+                        會員註冊問題
+                    </button>
+                </h2>
+                <div id="collapseTwo5" class="accordion-collapse collapse" data-bs-parent="#accordion5">
+                    <div class="accordion-body">
+                        每位消費者可註冊成為永豐餘生技【有機生活食尚】會員，但一組手機號碼僅能註冊一次會員，且不同帳號間不得主張合併或移轉相關權利。如無手機號碼註冊請在指定通路門市以紙本方式註冊會員。<br>
+                        2021/3/4 系統更新後，新舊會員首次登入皆須以新會員方式註冊，系統將比對在 SAP 內的 [行動電話] 與 [姓名]
+                        比對，只要完全符合會員系統內資料，將自動整合購物金的餘額及等級原有權益不受影響。舊會員登入後會馬上出現所屬會員等級及點數。消費後亦同。唯新會員資料會待隔天後顯示。
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree5" aria-expanded="false" aria-controls="collapseThree5">
+                        如何成為會員
+                    </button>
+                </h2>
+                <div id="collapseThree5" class="accordion-collapse collapse" data-bs-parent="#accordion5">
+                    <div class="accordion-body">
+                        凡在 Vege 消費滿新台幣 1,000 元，並配合填妥申請書之必填欄位，即可成為「有機生活食尚」購物金會員，如有未完全填寫資料之情事，恕無法成為購物金會員。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container-fluid align-itmes-center d-flex justify-content-center mb-5">
+        <a href="" class="btn btn-vg-lg" id="contactUsBtn">聯繫我們</a>
+
+    </div>
+
+    <!-- 文章Footer這裡開始 -->
+    <div class="vg-footer container-fluid mb-0 gap-2 align-itmes-center">
+        <div class="gap-2 align-itmes-center p-3 justify-content-center">
+            <a href="" class="vg-h4 vg-href">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="" class="vg-h4 vg-href">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="" class="vg-h4 vg-href">
+                <i class="fa-brands fa-facebook-messenger"></i>
+            </a>
+            <a href="" class="vg-h4 vg-href " id="lineLink">
+                <i class="fa-brands fa-line"></i> </a><br>
+        </div>
+        <div class="p-3justify-content-center">
+            <span class="vg-ps"><b>VEGE</b></span><br>
+            <span class="vg-ps">COPYRIGHT © 2023 VEGE GROUP</span>
+        </div>
+        <div class="p-3 justify-content-center">
+            <a href="" class="vg-ps vg-href">一般會員條款</a> /
+            <a href="" class="vg-ps vg-href">隱私權政策</a>
+        </div>
+    </div>
+    <!-- 文章Footer這裡結束 -->
+
+    <!-- 主標題與副標題的JS設置 -->
+    <script>
+
+        function myDropNav1() {
+            var x = document.getElementById("vg-navbar");
+            if (x.className === "vg-nav") {
+                x.className += " responsive";
+
+            } else {
+                x.className = "vg-nav";
+            }
+        }
+
+        function myDropNav2() {
+            var y = document.getElementById("vg-navbar-2");
+            if (y.className === "vg-navbar-2") {
+                y.className += " responsive";
+
+            } else {
+                y.className = "vg-navbar-2";
+            }
+        }
+
+        window.onscroll = function () {
+            scrollFunction();
+            stickyFunction();
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+                document.getElementById("vg-navbar").style.padding = "0px";
+                document.getElementById("vg-navbar").style.fontSize = "1rem";
+            } else {
+                document.getElementById("vg-navbar").style.padding = "30px 10px";
+                document.getElementById("vg-navbar").style.fontSize = "1.25rem";
+            }
+        }
+
+        var navbars = document.getElementById("vg-navbar-2");
+        var sticky = navbars.offsetTop;
+
+        function stickyFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbars.classList.add("vg-sticky");
+            } else {
+                navbars.classList.remove("vg-sticky");
+            }
+        }
+
+        $(function () {
+            $(`#qa1`).on({
+                mouseover: function () {
+                    // console.log(this);
+                    $(`#title1`).addClass('btn-vg-3-active');
+                },
+                mouseout: function () {
+                    $(`#title1`).removeClass('btn-vg-3-active');
+                }
+            });
+            $(`#qa2`).on({
+                mouseover: function () {
+                    // console.log(this);
+                    $(`#title2`).addClass('btn-vg-3-active');
+                },
+                mouseout: function () {
+                    $(`#title2`).removeClass('btn-vg-3-active');
+                }
+            });
+            $(`#qa3`).on({
+                mouseover: function () {
+                    // console.log(this);
+                    $(`#title3`).addClass('btn-vg-3-active');
+                },
+                mouseout: function () {
+                    $(`#title3`).removeClass('btn-vg-3-active');
+                }
+            });
+            $(`#qa4`).on({
+                mouseover: function () {
+                    // console.log(this);
+                    $(`#title4`).addClass('btn-vg-3-active');
+                },
+                mouseout: function () {
+                    $(`#title4`).removeClass('btn-vg-3-active');
+                }
+            });
+            $(`#qa5`).on({
+                mouseover: function () {
+                    // console.log(this);
+                    $(`#title5`).addClass('btn-vg-3-active');
+                },
+                mouseout: function () {
+                    $(`#title5`).removeClass('btn-vg-3-active');
+                }
+            });
+
+
+        })
+    </script>
+    <!-- 主標題與副標題的JS設置 -->
+
+    <!-- 購物車側攔的JS設置 -->
+    <!-- 購物車側攔的JS設置 -->
+    <script>
+        $(document).ready(function ($) {
+            // Declare the body variable
+            var $body = $("body");
+
+            // Function that shows and hides the sidebar cart
+            $(".cart-button, .close-button, #sidebar-cart-curtain").click(function (e) {
+                e.preventDefault();
+
+                // Add the show-sidebar-cart class to the body tag
+                $body.toggleClass("show-sidebar-cart");
+
+                // Check if the sidebar curtain is visible
+                if ($("#sidebar-cart-curtain").is(":visible")) {
+                    // Hide the curtain
+                    $("#sidebar-cart-curtain").fadeOut(500);
+                } else {
+                    // Show the curtain
+                    $("#sidebar-cart-curtain").fadeIn(500);
+                }
+            });
+
+            // Function that adds or subtracts quantity when a 
+            // plus or minus button is clicked
+            $body.on('click', '.plus-button, .minus-button', function () {
+                // Get quanitity input values
+                var qty = $(this).closest('.qty').find('.qty-input');
+                var val = parseFloat(qty.val());
+                var max = parseFloat(qty.attr('max'));
+                var min = parseFloat(qty.attr('min'));
+                var step = parseFloat(qty.attr('step'));
+
+                // Check which button is clicked
+                if ($(this).is('.plus-button')) {
+                    // Increase the value
+                    qty.val(val + step);
+                } else {
+                    // Check if minimum button is clicked and that value is 
+                    // >= to the minimum required
+                    if (min && min >= val) {
+                        // Do nothing because value is the minimum required
+                        qty.val(min);
+                    } else if (val > 0) {
+                        // Subtract the value
+                        qty.val(val - step);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

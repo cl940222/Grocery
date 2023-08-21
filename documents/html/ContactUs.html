@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://kit.fontawesome.com/afffc5a1db.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../vg.css">
+    <link rel="stylesheet" href="../css/contactUs.css">
+    <style>
+        .content {
+            padding: 16px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 主navbar這裡開始 -->
+    <a href="#user" class="icon" id="navUser">
+        <i class="fa-solid fa-user"></i>
+    </a>
+    <nav id="main-nav">
+        <a class="icon cart-button" id="navCart">
+            <span class="bag-count">3</span>
+            <span class="bag-icon"><i class="fa-solid fa-cart-shopping img-fluid"></i></span>
+            <!-- <span class="bag-label">View Bag</span> -->
+        </a>
+    </nav>
+    <aside id="sidebar-cart">
+        <main>
+            <a href="#" class="close-button"><i class="fa-solid fa-xmark"></i></a>
+            <h2>購物車<span class="count">3</span></h2>
+            <ul class="products">
+                <li class="product">
+                    <a href="#" class="product-link">
+                        <span class="product-image">
+                            <img src="https://via.placeholder.com/75x50/ffffff/cccccc?text=PHOTO" alt="Product Photo">
+                        </span>
+                        <span class="product-details">
+                            <h3>蔬菜箱</h3>
+                            <span class="qty-price">
+                                <span class="qty">
+                                    <button class="minus-button" id="minus-button-1">-</button>
+                                    <input type="number" id="qty-input-1" class="qty-input" step="1" min="1" max="1000"
+                                        name="qty-input" value="1" pattern="[0-9]*" title="Quantity"
+                                        inputmode="numeric">
+                                    <button class="plus-button" id="plus-button-1">+</button>
+                                    <input type="hidden" name="item-price" id="item-price-1" value="12.00">
+                                </span>
+                                <span class="price">200</span>
+                            </span>
+                        </span>
+                    </a>
+                    <a href="#remove" class="remove-button"><i class="fa-solid fa-trash"></i></a>
+                </li>
+                <li class="product">
+                    <a href="#" class="product-link">
+                        <span class="product-image">
+                            <img src="https://via.placeholder.com/75x50/ffffff/cccccc?text=PHOTO" alt="Product Photo">
+                        </span>
+                        <span class="product-details">
+                            <h3>萬聖箱</h3>
+                            <span class="qty-price">
+                                <span class="qty">
+                                    <button class="minus-button" id="minus-button-1">-</button>
+                                    <input type="number" id="qty-input-2" class="qty-input" step="1" min="1" max="1000"
+                                        name="qty-input" value="1" pattern="[0-9]*" title="Quantity"
+                                        inputmode="numeric">
+                                    <button class="plus-button" id="plus-button-1">+</button>
+                                    <input type="hidden" name="item-price" id="item-price-2" value="12.00">
+                                </span>
+                                <span class="price">300</span>
+                            </span>
+                        </span>
+                    </a>
+                    <a href="#remove" class="remove-button"><i class="fa-solid fa-trash"></i></a>
+                </li>
+                <li class="product">
+                    <a href="#" class="product-link">
+                        <span class="product-image">
+                            <img src="https://via.placeholder.com/75x50/ffffff/cccccc?text=PHOTO" alt="Product Photo">
+                        </span>
+                        <span class="product-details">
+                            <h3>水果箱</h3>
+                            <span class="qty-price">
+                                <span class="qty">
+                                    <button class="minus-button" id="minus-button-1">-</button>
+                                    <input type="number" id="qty-input-2" class="qty-input" step="1" min="1" max="1000"
+                                        name="qty-input" value="1" pattern="[0-9]*" title="Quantity"
+                                        inputmode="numeric">
+                                    <button class="plus-button" id="plus-button-1">+</button>
+                                    <input type="hidden" name="item-price" id="item-price-2" value="12.00">
+                                </span>
+                                <span class="price">300</span>
+                            </span>
+                        </span>
+                    </a>
+                    <a href="#remove" class="remove-button"><i class="fa-solid fa-trash"></i></a>
+                </li>
+            </ul>
+            <div class="totals">
+                <div class="subtotal">
+                    <span class="label">Total:</span> <span class="amount">800</span>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <a class="checkout-button" href="#">結帳去<i class="fa-solid fa-angles-right"></i></a>
+            </div>
+        </main>
+    </aside>
+    <div id="sidebar-cart-curtain"></div>
+    </div>
+    <div class="vg-nav" id="vg-navbar">
+        <a href="#home" class="p-3 btn-vg-2 btn-vg-2-active">LOGO</a>
+        <a href="#about" class="p-3 btn-vg-2">關於我們</a>
+        <a href="#news" class="p-3 btn-vg-2">最新消息</a>
+        <a href="#contact" class="p-3 btn-vg-2">訂閱蔬果箱</a>
+        <a href="#about" class="p-3 btn-vg-2">蔬果專欄</a>
+        <a href="#about" class="p-3 btn-vg-2 ms-auto">常見QA</a>
+
+        <a href="javascript:void(0);" class="icon" onclick="myDropNav1()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <!-- 主navbar這裡結束 -->
+
+
+    <div class="vg-banner d-flex justify-content-center pt-5">
+        <h2 class="vg-h2">聯絡我們</h2>
+    </div>
+
+    <section id="contactPage" class="container-lg row p-5 pb-5 shadow-lg mt-5 mb-5">
+        <div class="col-12 col-md-6 d-flex justify-content-center">
+            <div>
+
+                <h4 class="vg-h4 pb-1">已經是會員?</h4>
+                <p class="vg-p">如果您是 VEGE 會員，可提交訂單號碼、查看帳戶與提出支援要求。</p>
+                <h4 class="vg-h4 mt-5 pb-1">打電話聯繫我們</h4>
+                <p class="vg-p">有關訂閱制度、價格或配送相關的問題？歡迎 致電/line官方帳戶 / 右側表單聯絡我們。</p>
+                <a href="tel:+886423443509" class="vg-href-inline"><i class="fa-solid fa-phone"></i> (04)2344-3509</a><br>
+                <a href="https://line.me/" class="vg-href-inline"><i class="fa-brands fa-line"></i> VEGE 官方 LINE 帳號</a><br>
+                <h4 class="vg-h4 mt-5 pb-1">快速得到答覆</h4>
+                <p class="vg-p mb-5">查看我們完整的<a href="https://line.me/" class="vg-href-inline">幫助中心與常見問題</a>。</p>
+                
+            </div>
+
+        </div>
+        <div class="form col-12 col-md-6" id="contactForm">
+            <h4 class="vg-h4 pb-1">填寫表單取得聯繫</h4>
+            <div class="row align-items-center">
+                <div class="col-7 form-floating mb-3">
+                    <input type="text" class="form-control ps-5" id="floatingInput" placeholder="姓名"
+                        style="letter-spacing: 1px;">
+                    <label for="floatingInput" class="ms-3">姓名 </label>
+                </div>
+                <span class="col-5 vg-p pb-3">
+                    <input type="radio" class="btn-check" name="genderTitle" id="ms" autocomplete="off" checked>
+                    <label class="btn" for="ms">小姐</label>
+                    <input type="radio" class="btn-check" name="genderTitle" id="mr" autocomplete="off">
+                    <label class="btn" for="mr">先生</label>
+                </span>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="tel" class="form-control ps-5" id="floatingTel" placeholder="電話"
+                    style="letter-spacing: 1px;">
+                <label for="floatingTel">電話 </label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control ps-5" id="floatingEmail" placeholder="email"
+                    style="letter-spacing: 1px;">
+                <label for="floatingEmail">email </label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control ps-5" id="floatingSubject" placeholder="主旨"
+                    style="letter-spacing: 1px;">
+                <label for="floatingSubject">主旨 </label>
+            </div>
+            <div class="form-floating mb-3">
+                <textarea class="form-control ps-5" placeholder="Leave a comment here" id="floatingTextarea2"
+                    style="height: 150px; letter-spacing: 1px;"></textarea>
+                <label for="floatingTextarea2">訊息</label>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-vg-lg mb-0">取得聯繫</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 文章Footer這裡開始 -->
+    <div class="vg-footer container-fluid mb-0 gap-2 align-itmes-center">
+        <div class="gap-2 align-itmes-center p-3 justify-content-center">
+            <a href="./ContactUs.html" class="vg-h4 vg-href">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="" class="vg-h4 vg-href">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="" class="vg-h4 vg-href">
+                <i class="fa-brands fa-facebook-messenger"></i>
+            </a>
+            <a href="https://line.me/" class="vg-h4 vg-href " id="lineLink">
+                <i class="fa-brands fa-line"></i> </a><br>
+        </div>
+        <div class="p-3justify-content-center">
+            <span class="vg-ps"><b>VEGE</b></span><br>
+            <span class="vg-ps">COPYRIGHT © 2023 VEGE GROUP</span>
+        </div>
+        <div class="p-3 justify-content-center">
+            <a href="" class="vg-ps vg-href">一般會員條款</a> /
+            <a href="" class="vg-ps vg-href">隱私權政策</a>
+        </div>
+    </div>
+    <!-- 文章Footer這裡結束 -->
+
+    <!-- 主標題與副標題的JS設置 -->
+    <script>
+
+        function myDropNav1() {
+            var x = document.getElementById("vg-navbar");
+            if (x.className === "vg-nav") {
+                x.className += " responsive";
+
+            } else {
+                x.className = "vg-nav";
+            }
+        }
+
+        function myDropNav2() {
+            var y = document.getElementById("vg-navbar-2");
+            if (y.className === "vg-navbar-2") {
+                y.className += " responsive";
+
+            } else {
+                y.className = "vg-navbar-2";
+            }
+        }
+
+        window.onscroll = function () {
+            scrollFunction();
+            stickyFunction();
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+                document.getElementById("vg-navbar").style.padding = "0px";
+                document.getElementById("vg-navbar").style.fontSize = "1rem";
+            } else {
+                document.getElementById("vg-navbar").style.padding = "30px 10px";
+                document.getElementById("vg-navbar").style.fontSize = "1.25rem";
+            }
+        }
+
+        var navbars = document.getElementById("vg-navbar-2");
+        var sticky = navbars.offsetTop;
+
+        function stickyFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbars.classList.add("vg-sticky");
+            } else {
+                navbars.classList.remove("vg-sticky");
+            }
+        }
+
+        $(function () {
+            $(`#sec1`).on({
+                mouseover: function () {
+                    // console.log(this);
+                    $(`#title1`).addClass('btn-vg-3-active');
+                },
+                mouseout: function () {
+                    $(`#title1`).removeClass('btn-vg-3-active');
+                }
+            });
+            $(`#sec2`).on({
+                mouseover: function () {
+                    // console.log(this);
+                    $(`#title2`).addClass('btn-vg-3-active');
+                },
+                mouseout: function () {
+                    $(`#title2`).removeClass('btn-vg-3-active');
+                }
+            });
+            $(`#sec3`).on({
+                mouseover: function () {
+                    // console.log(this);
+                    $(`#title3`).addClass('btn-vg-3-active');
+                },
+                mouseout: function () {
+                    $(`#title3`).removeClass('btn-vg-3-active');
+                }
+            })
+
+        })
+    </script>
+    <!-- 主標題與副標題的JS設置 -->
+
+    <!-- 購物車側攔的JS設置 -->
+    <!-- 購物車側攔的JS設置 -->
+    <script>
+        $(document).ready(function ($) {
+            // Declare the body variable
+            var $body = $("body");
+
+            // Function that shows and hides the sidebar cart
+            $(".cart-button, .close-button, #sidebar-cart-curtain").click(function (e) {
+                e.preventDefault();
+
+                // Add the show-sidebar-cart class to the body tag
+                $body.toggleClass("show-sidebar-cart");
+
+                // Check if the sidebar curtain is visible
+                if ($("#sidebar-cart-curtain").is(":visible")) {
+                    // Hide the curtain
+                    $("#sidebar-cart-curtain").fadeOut(500);
+                } else {
+                    // Show the curtain
+                    $("#sidebar-cart-curtain").fadeIn(500);
+                }
+            });
+
+            // Function that adds or subtracts quantity when a 
+            // plus or minus button is clicked
+            $body.on('click', '.plus-button, .minus-button', function () {
+                // Get quanitity input values
+                var qty = $(this).closest('.qty').find('.qty-input');
+                var val = parseFloat(qty.val());
+                var max = parseFloat(qty.attr('max'));
+                var min = parseFloat(qty.attr('min'));
+                var step = parseFloat(qty.attr('step'));
+
+                // Check which button is clicked
+                if ($(this).is('.plus-button')) {
+                    // Increase the value
+                    qty.val(val + step);
+                } else {
+                    // Check if minimum button is clicked and that value is 
+                    // >= to the minimum required
+                    if (min && min >= val) {
+                        // Do nothing because value is the minimum required
+                        qty.val(min);
+                    } else if (val > 0) {
+                        // Subtract the value
+                        qty.val(val - step);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

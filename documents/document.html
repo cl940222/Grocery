@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./vg.css">
+
+    <style>
+        .container>div {
+            border: 1px solid var(--text-color);
+        }
+
+        #border {
+            text-align: center;
+            padding: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1 class="vg-h1"> class: vg-h1 ; Hi, this is h1. 50px</h1>
+        <h1 class="vg-h2"> class: vg-h2 ; Hi, this is h2. 40px</h1>
+        <h1 class="vg-h3"> class: vg-h3 ; Hi, this is h3. 32px</h1>
+        <h1 class="vg-h4"> class: vg-h4 ; Hi, this is h4. 24px</h1>
+        <h1 class="vg-h5"> class: vg-h5 ; Hi, this is h5. 18px</h1>
+        <p class="vg-p"> class: vg-p ; Hi, this is text. 16px</p>
+        <p class="vg-ps"> class: vg-ps ; Hi, this is text. 12px</p>
+        <hr>
+        <span class="text-danger">如果要做看得到外框的區塊, 請套用class: vg-bd-5</span><br><br>
+        <div class="vg-bd-5" id="border">class: vg-bd-5; border-radius 5px</div>
+        <hr>
+
+        每個區塊使用 .container, 如果要置中請使用
+        .d-flex + .justify-content-center <br>
+        物件之間的距離請使用class .gap-3(父層的class)
+        <br><br>
+        <div class="container d-flex gap-3 justify-content-center">
+            <div class="p-4 vg-bd-5">
+                <h3 class="vg-h3">TITLE H3</h3>
+                <p class="vg-p">div 請套用 class: p-4</p>
+            </div>
+            <div class="p-4 vg-bd-5">
+                <h3 class="vg-h3">TITLE H3</h3>
+                <p class="vg-p">div 請套用 class: p-4</p>
+            </div>
+            <div class="p-4 vg-bd-5">
+                <h3 class="vg-h3">TITLE H3</h3>
+                <p class="vg-p">div 請套用 class: p-4</p>
+            </div>
+        </div>
+        <hr>
+        <div class="">
+            <h3 class="vg-h5">P標籤的line-height不須特別設置, 用bootstrap預設即可</h3>
+
+            <span class="text-danger"> 如果想前兩行縮排 請套用class: vg-indent</span>
+
+            <p class="vg-p vg-indent p-3">
+                每個人都不得不面對這些問題。在面對這種問題時，務必詳細考慮蔬果的各種可能。洛克曾經認為，熱愛真理的確實特徵，是對任何一個命題的接受絕不超過其證據所顯示的程度。希望大家能發現話中之話。赫塞說過一句很有意思的話，有勇氣承擔命運這才是英雄好漢！
+                這句話把我們帶到了一個新的維度去思考這個問題。</p>
+        </div>
+        <hr>
+        <form action="" class="needs-validation">
+            <span class="text-danger"> 待確認: focus的時候的邊框顏色以及label的樣式</span><br>
+            <span class="vg-p p-2">請用一個div包住input+label標籤</span><br>
+            <span class="vg-p p-2">div class="form-floating"</span><br>
+            <span class="vg-p p-2">input class"form-control"</span>
+            <br>
+            <div class="form-floating mb-3 mt-3 w-50">
+                <input type="text" class="form-control" id="floatingInput" placeholder="姓名">
+                <label for="floatingInput">姓名</label>
+            </div>
+            <div class="form-floating w-50">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+            <pre class="text-success">
+            
+
+    div class="form-floating mb-3 w-50"
+      input type="text" class="form-control" id="floatingInput" placeholder="name@example.com"
+      label for="floatingInput">姓名 /label
+    /div
+            </pre>
+            <input type="submit" value="thank you" class="m-2 btn btn-vg"><br>
+        </form>
+        <hr>
+        大button class: btn btn-vg-lg <br>
+        <button class="btn btn-vg-lg m-2 shadow-sm">前往訂閱</button><br>
+        <button class="btn btn-vg-lg m-2 shadow-sm">聯絡我們</button><br>
+        <hr>
+        button class: btn btn-vg <br>
+        <button class="btn btn-vg m-2 shadow-sm">送出</button><br>
+        <button class="btn btn-vg m-2 shadow-sm">聯絡我們</button><br>
+        <hr>
+        小button class: btn btn-vg-sm <br>
+        <button class="btn btn-vg-sm m-2 shadow-sm">立刻買</button><br>
+        <button class="btn btn-vg-sm m-2 shadow-sm">變更</button><br>
+        <hr>
+        極小button class: btn btn-vg-xs <br>
+        <button class="btn btn-vg-xs m-2 shadow-sm">立刻買</button><br>
+        <button class="btn btn-vg-xs m-2 shadow-sm">變更</button><br>
+        <hr>
+        導覽列 button <br>
+        請於 li 套用 class: btn-vg-2<br>
+        <ul>
+            <li class="m-2  btn-vg-2"><a href="#" class="vg-href">關於我們</a></li>
+            <li class="m-2  btn-vg-2"><a href="#" class="vg-href">最新消息</a></li>
+            <li class="m-2  btn-vg-2"><a href="#" class="vg-href">產品資訊</a></li>
+        </ul>
+
+        <hr>
+        a標籤 class: vg-href <br><br>
+        我是一般文字<a href="#" class="vg-href">我是A標籤的文字</a>在文字中間就會長這樣<br><br>
+        a標籤 class: vg-href-light <br><br>
+        我是一般文字<a href="#" class="vg-href-light">我是A標籤的文字</a>在文字中間就會長這樣<br><br>
+        a標籤 class: vg-href-inline <br><br>
+        我是一般文字<a href="#" class="vg-href-inline">我是A標籤的文字</a>在文字中間就會長這樣
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </section>
+
+</body>
+
+</html>
